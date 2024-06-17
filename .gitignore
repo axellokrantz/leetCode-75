@@ -178,6 +178,11 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# Build
+bin/
+obj/
+Debug/
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
