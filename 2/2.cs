@@ -19,7 +19,7 @@ public class Solution
                 return "";
             }
         }
-        return substr;
+        return "";
     }
 
     static void Main(string[] args)
