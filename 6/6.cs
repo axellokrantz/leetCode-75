@@ -12,10 +12,9 @@ public class Solution
         return result;
     }
 
-
     static void Main(string[] args)
     {
-        string str = "hello  lol";
+        string str = " hello ";
         Solution s = new Solution();
         Console.WriteLine(s.ReverseWords(str));
     }
