@@ -1,34 +1,40 @@
-﻿using System.Numerics;
-
-public class Solution
+﻿public class Solution
 {
-    public bool IsSubsequence(string s, string t)
+    public int MaxArea(int[] height)
     {
-        if(string.IsNullOrEmpty(s)){
-            return true;
-        }
 
-        int j = 0;
-        for (int i = 0; i < t.Length; i++)
+        int maxArea = int.MinValue;
+        int area = int.MinValue;
+        int right = height.Length - 1;
+        int left = 0;
+
+        while (left < right)
         {
-            if (t[i] == s[j])
+            if (height[left] >= height[right])
             {
-                j++;
+                area = height[right] * (right - left);
+            }
+            else{
+                area = height[left] * (right - left);
             }
 
-            if (j == s.Length)
-            {
-                return true;
+            maxArea = int.Max(maxArea, area);
+
+            if(height[left] > height[right]){
+                right--;
             }
+            else{
+                left++;
+            }            
         }
-        return false;
+
+        return maxArea;
     }
 
     static void Main(string[] args)
     {
-        string s = "axc";
-        string t = "ahbgdc";
+        int[] height = [1, 1];
         Solution solution = new Solution();
-        Console.Write(solution.IsSubsequence(s, t));
+        Console.Write(solution.MaxArea(height));
     }
 }
